@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diyabet Tahmini</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 60%;
+            margin: auto;
+            overflow: hidden;
+            padding: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 2px;
+        }
+
+        .card {
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 2px;
+            font-weight: bold;
+        }
+
+        .form-group input[type='number'] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .submit-btn:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Diyabet Tahmini Uygulaması</h1>
+        <p>Örnek veri: 7, 147, 173, 36, 0, 33.5, 0.63, 50</p>
+
+        <div class="card">
+            <form action="/" method="post" class="diabetes-form">
+                <div class="form-group">
+                    <label for="Pregnancies">Pregnancies:</label>
+                    <input type="number" name="Pregnancies" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="Glucose">Glucose:</label>
+                    <input type="number" name="Glucose" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="BloodPressure">BloodPressure:</label>
+                    <input type="number" name="BloodPressure" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="SkinThickness">SkinThickness:</label>
+                    <input type="number" name="SkinThickness" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="Insulin">Insulin:</label>
+                    <input type="number" name="Insulin" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="BMI">BMI:</label>
+                    <input type="number" name="BMI" step="0.01" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="DiabetesPedigreeFunction">DiabetesPedigreeFunction:</label>
+                    <input type="number" name="DiabetesPedigreeFunction" step="0.01" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="Age">Age:</label>
+                    <input type="number" name="Age" required>
+                </div>
+
+                <input type="submit" value="Tahmin Et" class="submit-btn">
+            </form>
+        </div>
+        {% if tahmin %} 
+        <h2>{{ tahmin }}</h2>
+        {% endif %}
+    </div>
+</body>
+</html>
